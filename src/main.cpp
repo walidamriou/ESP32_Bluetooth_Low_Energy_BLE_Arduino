@@ -10,6 +10,8 @@ Last update: October 2020
 */
 
 #include <Arduino.h>
+#include <M5StickC.h>
+#include "AXP192.h"
 
 // You will found more about this library here: https://github.com/nkolban/ESP32_BLE_Arduino
 #include <BLEDevice.h>
@@ -23,9 +25,10 @@ Last update: October 2020
 
 void setup() {
   Serial.begin(115200);
-  
+  //M5.begin();
+
   // Create a BLE device called “walidamriou_esp32_device_BLE”
-  BLEDevice::init("walidamriou_esp32_device_BLE");
+  BLEDevice::init("walidamriou");
 
   // Set the BLE device as a server
   BLEServer *pServer = BLEDevice::createServer();
@@ -58,5 +61,5 @@ void setup() {
 }
 
 void loop() {
-  delay(2000);
+  //delay(2000);
 }
